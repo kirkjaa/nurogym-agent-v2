@@ -27,8 +27,8 @@ NuroCoach provides personalised exercise guidance, mood-aware wellness support, 
 ### 1. Clone and Configure
 
 ```bash
-git clone https://github.com/your-org/nurogym-coach.git
-cd nurogym-coach
+git clone https://github.com/kirkjaa/nurogym-agent-v2.git
+cd nurogym-agent-v2
 
 # Copy environment template
 cp .env.example .env
@@ -212,7 +212,7 @@ Requires **Docker** and a **`.env`** file (copy from `.env.example`). Show full 
 ## Project Structure
 
 ```
-nurogym-coach/
+nurogym-agent-v2/
 ├── AGENTS.md                   # Cursor agent notes (SearXNG research workflow)
 ├── config/
 │   ├── nurogym.json            # NuroGym coach configuration
