@@ -6,6 +6,14 @@ This file records recent structural and configuration work on the NuroGym Coach 
 
 ---
 
+## 2026-03-31 — GitHub: new canonical remote `kirkjaa/nurogym-agent-v2`
+
+### Summary
+
+The previous **`.git`** history (remote `tottoh/nurogym-coach`) was **removed** from this working tree. A **fresh repository** was initialized, all tracked sources committed, and **`origin`** set to **[https://github.com/kirkjaa/nurogym-agent-v2](https://github.com/kirkjaa/nurogym-agent-v2)** with **`main`** pushed. **`README.md`** clone instructions and project tree folder name were updated to **`nurogym-agent-v2`**. Prior commit history from the old remote is **not** present in the new repo (single new root commit plus follow-up doc commit).
+
+---
+
 ## 2026-03-31 — `deploy.sh`, README, PROGRESS (help, quick build, backup, restore)
 
 ### Summary
