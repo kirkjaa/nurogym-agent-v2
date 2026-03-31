@@ -1,0 +1,105 @@
+.container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #000000 0%, #1a1a1a 50%, #A31F24 100%);
+    font-family: 'Noto Sans Thai', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+    padding: 1rem;
+    width: 100%;
+    max-width: 100vw;
+    overflow-x: hidden;
+    position: relative;
+}
+
+.langSwitcher {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 10;
+}
+
+.mainContent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 600px;
+    padding: 0 1rem;
+}
+
+.title {
+    font-size: clamp(2.5rem, 6vw, 3.5rem);
+    font-weight: bold;
+    color: #ffffff;
+    margin: 0.5rem 0 0.25rem;
+    letter-spacing: 3px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.logoSubtext {
+    font-size: clamp(1rem, 3vw, 1.4rem);
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.8);
+    margin: 0;
+    letter-spacing: 2px;
+}
+
+.divider {
+    width: 50%;
+    margin: 1.5rem 0;
+    border: none;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #A31F24, transparent);
+    min-width: 200px;
+}
+
+.welcomeText {
+    font-size: clamp(1.2rem, 3vw, 1.5rem);
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 0.5rem;
+}
+
+.promptText {
+    font-size: clamp(1rem, 2.5vw, 1.2rem);
+    color: rgba(255, 255, 255, 0.5);
+    margin-bottom: 1rem;
+}
+
+.actionButton {
+    background: linear-gradient(135deg, #A31F24 0%, #8a1a1e 100%);
+    color: #ffffff;
+    border: none;
+    border-radius: 25px;
+    padding: clamp(0.8rem, 2.5vw, 1rem) clamp(2rem, 5vw, 2.5rem);
+    font-size: clamp(1rem, 2.5vw, 1.2rem);
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: 'Noto Sans Thai', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    min-height: 44px;
+    min-width: 120px;
+    box-shadow: 0 4px 10px rgba(163, 31, 36, 0.3);
+}
+
+.actionButton:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(163, 31, 36, 0.4);
+    background: linear-gradient(135deg, #8a1a1e 0%, #6a1518 100%);
+}
+
+@media (max-width: 768px) {
+    .container { padding: 0.5rem; }
+    .mainContent { padding: 0 0.5rem; }
+    .divider { width: 60%; min-width: 150px; }
+}
+
+@media (max-width: 480px) {
+    .container { padding: 0.25rem; }
+    .mainContent { padding: 0 0.25rem; }
+    .divider { width: 70%; min-width: 120px; }
+    .actionButton { padding: 0.8rem 2rem; font-size: 1rem; }
+}

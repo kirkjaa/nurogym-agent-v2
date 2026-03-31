@@ -1,0 +1,88 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@300;400;500;600;700&display=swap');
+
+:root {
+    --primary-red: #A31F24;
+    --dark-red: #8a1a1e;
+    --light-red: #c9393e;
+    --pure-black: #000000;
+    --dark-black: #1a1a1a;
+    --soft-black: #2d2d2d;
+    --pure-white: #ffffff;
+    --off-white: #f8f8f8;
+    --light-gray: #e8e8e8;
+    --medium-gray: #888888;
+    --ai-purple: #667eea;
+    --ai-purple-dark: #764ba2;
+    --ai-green: #28a745;
+    --border-radius: 10px;
+    --border-radius-lg: 15px;
+    --border-radius-pill: 25px;
+    --box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    --box-shadow-deep: 0 10px 30px rgba(0, 0, 0, 0.2);
+    --transition: all 0.3s ease;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: 'Noto Sans Thai', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+    overflow-x: hidden;
+}
+
+code {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
+
+.main-content {
+    height: calc(100vh - 50px);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+@media (max-width: 768px) {
+    .main-content {
+        height: calc(100vh - 40px);
+    }
+
+    button, a {
+        min-height: 44px;
+        min-width: 44px;
+    }
+
+    * {
+        -webkit-overflow-scrolling: touch;
+    }
+
+    input, textarea, select {
+        font-size: 16px !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .main-content {
+        height: calc(100vh - 35px);
+    }
+
+    * {
+        animation-duration: 0.2s !important;
+        transition-duration: 0.2s !important;
+    }
+
+    body {
+        line-height: 1.5;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    body {
+        line-height: 1.6;
+    }
+}

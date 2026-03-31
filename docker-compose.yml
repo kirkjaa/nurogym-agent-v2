@@ -1,0 +1,57 @@
+services:
+  # ChromaDB Database (Backend)
+  chromadb:
+    image: chromadb/chroma:latest
+    ports:
+      - "8003:8000"
+    volumes:
+      - ./chromadb:/chroma/chroma
+    environment:
+      - CHROMA_SERVER_HOST=0.0.0.0
+      - CHROMA_SERVER_HTTP_PORT=8000
+      - CHROMA_SERVER_CORS_ALLOW_ORIGINS=["*"]
+    restart: unless-stopped
+
+  # Seed Service - Runs once to populate the database
+  seed:
+    build:
+      context: .
+      dockerfile: Dockerfile.seed
+    env_file:
+      - .env
+    environment:
+      - CHROMA_DATABASE_URL=http://chromadb:8000
+      - CHUNK_SIZE=768
+      - CHUNK_OVERLAP=150
+      - DOCUMENTS_FOLDER=/app/curriculum,/app/memory
+    volumes:
+      - ./curriculum:/app/curriculum
+      - ./memory:/app/memory
+      - ./config:/app/config
+    depends_on:
+      chromadb:
+        condition: service_started
+    restart: "no"
+
+  # Next.js Application (Frontend)
+  frontend:
+    build: .
+    ports:
+      - "3003:3003"
+    env_file:
+      - .env
+    environment:
+      - PORT=3003
+      - CHROMA_DATABASE_URL=http://chromadb:8000
+      - CHUNK_SIZE=768
+      - CHUNK_OVERLAP=150
+      - DOCUMENTS_FOLDER=/app/curriculum,/app/memory
+      - COACH_CONFIG_PATH=/app/config/nurogym.json
+    volumes:
+      - ./curriculum:/app/curriculum
+      - ./memory:/app/memory
+      - ./config:/app/config
+    depends_on:
+      chromadb:
+        condition: service_started
+    restart: unless-stopped
